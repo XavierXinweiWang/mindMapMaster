@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="cytoscapeDrawer">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Cytoscape Drawer</title>
+    <script src='js/cytoscape.js'></script>
+<!--    <script src='js/listener.js'></script>-->
+    
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.10/angular.min.js'></script>
+    <script src="js/index.js"></script>
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body ng-controller="MainCtrl">
+    <h1>{{title}}</h1>
+    <div>
+        <input ng-model="csv" onchange="angular.element(this).scope().fileChanged()" type="file" accept=".csv" id="fileInput"/>
+    </div>
+    <br/>
+    <div>
+        <textarea ng-model="csvFile" readonly="true" style="width:99%; height:50%" disabled></textarea>
+    </div>
+    <div id="cy"></div>
+</body>
+
+</html>
